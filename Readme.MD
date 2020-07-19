@@ -1,9 +1,12 @@
 # Car rental shop (Full Stack)
 
-Deployed on heroku: https://car-rental-shop.herokuapp.com/
+## Stack Used
 
-To Deploy this app on heroku setup the env variables of your heroku app to be:
+### MERN (MongoDB, Express, React and Node.js)
 
-MONGODB_URI = your mongodb uri
+### Deployed on heroku: https://car-rental-shop.herokuapp.com/
 
-NODE_ENV = production
+### To Deploy this app on heroku setup the env variables of your heroku app to be:
+
+* MONGODB_URI = your mongodb uri
+* NODE_ENV = production

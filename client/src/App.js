@@ -7,7 +7,6 @@ import RentCar from "./components/rent-car.component";
 import AddCar from "./components/add-car.component";
 import CarPricing from "./components/car-pricing.component";
 
-
 function App() {
   return (
     <Router>
