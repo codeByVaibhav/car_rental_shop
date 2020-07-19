@@ -30,8 +30,6 @@ export default class CreateExercise extends Component {
       rented: this.state.rented
     }
 
-    console.log(car);
-
     axios.post('http://localhost:8080/api/add', car)
       .then(res => console.log(res.data));
 
@@ -54,10 +52,10 @@ export default class CreateExercise extends Component {
               onChange={this.onChangeType}>
               {
                 carTypes.map((type) => {
-                  return <option
+                  return (<option
                     key={type}
                     value={type}>{type}
-                  </option>;
+                  </option>);
                 })
               }
             </select>
