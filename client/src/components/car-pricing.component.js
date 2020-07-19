@@ -6,9 +6,9 @@ import {
     SEDAN_DESC,
     HATCHBACK_DESC
 } from '../constants';
+
 const CarPricing = (props) => {
     return (
-
         <div>
             <h3>Fees</h3>
             <table className="table">
@@ -54,8 +54,6 @@ const CarPricing = (props) => {
                 </tbody>
             </table>
         </div>
-    )
-
-
+    );
 }
 export default CarPricing;

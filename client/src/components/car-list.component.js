@@ -18,7 +18,7 @@ const Car = props => {
   );
 }
 
-export default class ExercisesList extends Component {
+export default class CarList extends Component {
 
   state = { cars: [] };
 

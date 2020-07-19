@@ -8,8 +8,7 @@ import {
     HATCHBACK_DESC
 } from '../constants';
 
-
-export default class EditExercise extends Component {
+export default class RentCar extends Component {
 
     state = {
         name: '',

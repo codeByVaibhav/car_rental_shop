@@ -21,7 +21,6 @@ mongoose.connection.on('connected', () => console.log('Database connected.'));
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 }
-
 // Handel Http routes
 app.use('/api', carRoutes);
 

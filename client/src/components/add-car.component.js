@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class CreateExercise extends Component {
+export default class AddCar extends Component {
 
   state = {
     name: '',
