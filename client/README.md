@@ -1,1 +1,0 @@
-# Car rental shop
