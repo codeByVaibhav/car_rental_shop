@@ -1,16 +1,12 @@
 const express = require("express");
 const morgan = require("morgan");
 const mongoose = require("mongoose");
-const cors = require("cors");
-const path = require("path");
 require('dotenv').config();
 const carRoutes = require("./routes/cars");
 
 const app = express();
 // HTTP request logger
 app.use(morgan('tiny'));
-// Cors for handling cross origin request
-app.use(cors());
 // Data parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

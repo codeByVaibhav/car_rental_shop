@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { PREMIUM_FEE, REGULAR_FEE } from '../constants';
+import {
+    REGULAR_FEE,
+    PREMIUM_FEE,
+    SUV_DESC,
+    SEDAN_DESC,
+    HATCHBACK_DESC
+} from '../constants';
 
 
 export default class EditExercise extends Component {
@@ -8,28 +14,31 @@ export default class EditExercise extends Component {
     state = {
         name: '',
         type: '',
+        desc: '',
         rented: false,
         noOfDays: 1,
         calculatedPrice: 0
     };
 
     componentDidMount() {
-        axios.get('http://localhost:8080/api/' + this.props.match.params.id)
+        axios.get('/api/' + this.props.match.params.id)
             .then(response => {
-                let price = 0
+                let price = 0;
+                let desc = '';
                 switch (response.data.type) {
                     case "SUV":
-                        price = PREMIUM_FEE; break;
+                        price = PREMIUM_FEE; desc = SUV_DESC; break;
                     case "Sedan":
-                        price = REGULAR_FEE; break;
+                        price = REGULAR_FEE; desc = SEDAN_DESC; break;
                     case "Hatchback":
-                        price = REGULAR_FEE; break;
+                        price = REGULAR_FEE; desc = HATCHBACK_DESC; break;
                 }
                 this.setState({
                     name: response.data.name,
                     type: response.data.type,
                     rented: Boolean(response.data.rented),
-                    calculatedPrice: price
+                    calculatedPrice: price,
+                    desc: desc
                 })
             })
             .catch(function (error) {
@@ -77,7 +86,7 @@ export default class EditExercise extends Component {
                         <div className="card-body">
                             <h5 className="card-title">Name: {this.state.name}</h5>
                             <h5 className="card-title">Type: {this.state.type}</h5>
-                            <p className="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime excepturi impedit voluptatem libero quibusdam illo, veritatis repellendus ullam ratione unde doloremque, magnam error? Quos beatae explicabo animi laborum omnis expedita.</p>
+                            <p className="card-text">Pricing: {this.state.desc}</p>
                             <h6>Total Price: {this.state.calculatedPrice}</h6>
                             <button onClick={this.handleIncreaseDays} className="btn btn-primary"> Increase + </button>
                             <p>Days to Rent: {this.state.noOfDays}</p>

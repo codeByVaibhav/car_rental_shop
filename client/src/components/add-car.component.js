@@ -30,7 +30,7 @@ export default class CreateExercise extends Component {
       rented: this.state.rented
     }
 
-    axios.post('http://localhost:8080/api/add', car)
+    axios.post('/api/add', car)
       .then(res => console.log(res.data));
 
     window.location = '/';

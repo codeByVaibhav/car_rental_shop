@@ -1,13 +1,35 @@
 import React, { Component } from 'react';
-
+import {
+    REGULAR_FEE,
+    PREMIUM_FEE,
+    SUV_DESC,
+    SEDAN_DESC,
+    HATCHBACK_DESC
+} from '../constants';
 const CarPricing = (props) => {
     return (
 
         <div>
-            {/* 
-            Premium fee: 1000
-            Regular fee: 500
-            */}
+            <h3>Fees</h3>
+            <table className="table">
+                <thead className="thead-light">
+                    <tr>
+                        <th>Type</th>
+                        <th>Fee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Regular</td>
+                        <td>{REGULAR_FEE} Rs</td>
+                    </tr>
+                    <tr>
+                        <td>Premium</td>
+                        <td>{PREMIUM_FEE} Rs</td>
+                    </tr>
+                </tbody>
+            </table>
+
             <h3>Pricing Model</h3>
             <table className="table">
                 <thead className="thead-light">
@@ -19,19 +41,15 @@ const CarPricing = (props) => {
                 <tbody>
                     <tr>
                         <td>SUV</td>
-                        <td>Price is Premium fee times days rented.</td>
+                        <td>{SUV_DESC}</td>
                     </tr>
                     <tr>
                         <td>Sedan</td>
-                        <td>Price is Regular fee once for first 3 days, Plus Regular fee times the number of
-                        days rented over 3 days.
-                        </td>
+                        <td>{SEDAN_DESC}</td>
                     </tr>
                     <tr>
                         <td>Hatchback</td>
-                        <td>Price is Regular fee once for first 5 days, Plus Regular fee times the number of
-                        days rented over 5 days.
-                        </td>
+                        <td>{HATCHBACK_DESC}</td>
                     </tr>
                 </tbody>
             </table>

@@ -11,8 +11,8 @@ const Car = props => {
       <td>{props.car.rented ? "Yes" : "No"}</td>
       <td>
         {props.car.rented ? "NA"
-        :
-        <Link type="button" className="btn btn-dark" to={"/rent/" + props.car._id}>Rent</Link>}
+          :
+          <Link type="button" className="btn btn-dark" to={"/rent/" + props.car._id}>Rent</Link>}
       </td>
     </tr>
   );
@@ -23,7 +23,7 @@ export default class ExercisesList extends Component {
   state = { cars: [] };
 
   componentDidMount() {
-    axios.get('http://localhost:8080/api')
+    axios.get('/api')
       .then(response => {
         this.setState({ cars: response.data })
       })
