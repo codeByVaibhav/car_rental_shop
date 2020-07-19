@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modal from "react-bootstrap/Modal";
 import axios from 'axios';
 import {
     REGULAR_FEE,
@@ -14,9 +15,9 @@ export default class RentCar extends Component {
         name: '',
         type: '',
         desc: '',
-        rented: false,
         noOfDays: 1,
-        calculatedPrice: 0
+        calculatedPrice: 0,
+        showPurchasedCard: false
     };
 
     componentDidMount() {
@@ -35,7 +36,6 @@ export default class RentCar extends Component {
                 this.setState({
                     name: response.data.name,
                     type: response.data.type,
-                    rented: Boolean(response.data.rented),
                     calculatedPrice: price,
                     desc: desc
                 })
@@ -46,6 +46,7 @@ export default class RentCar extends Component {
     }
     handleCarRent = () => {
         console.log(`Car Rented: ${this.state.name}`);
+        this.setState({ showPurchasedCard: !this.state.showPurchasedCard });
     }
 
     handleIncreaseDays = () => {
@@ -79,21 +80,33 @@ export default class RentCar extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="d-flex justify-content-between">
-                    <div className="card" style={{ "width": "40rem" }}>
-                        <div className="card-body">
-                            <h5 className="card-title">Name: {this.state.name}</h5>
-                            <h5 className="card-title">Type: {this.state.type}</h5>
-                            <p className="card-text">Pricing: {this.state.desc}</p>
-                            <h6>Total Price: {this.state.calculatedPrice}</h6>
-                            <button onClick={this.handleIncreaseDays} className="btn btn-primary"> Increase + </button>
-                            <p>Days to Rent: {this.state.noOfDays}</p>
-                            <button onClick={this.handleDecreaseDays} className="btn btn-primary"> Decrease - </button>
-                            <br />
-                            <button onClick={this.handleCarRent} className="btn btn-primary"> Rent Car </button>
-                        </div>
+            <div className="row">
+                <div className="col-6">
+                    <div className="card card-body" style={{ "width": "28rem" }}>
+                        <h5 className="card-title">Name: {this.state.name} </h5>
+                        <h5 className="card-title">Type: {this.state.type} </h5>
+                        <p className="card-title">Pricing: {this.state.desc} </p>
+                        <h6>Total Price: {this.state.calculatedPrice} Rs</h6>
+                        <h6>Days to Rent: {this.state.noOfDays}</h6>
+                        <button onClick={this.handleIncreaseDays} className="btn btn-primary ml-4 mr-4 mt-4 mb-2"> + Increase No of Days </button>
+                        <button onClick={this.handleDecreaseDays} className="btn btn-primary ml-4 mr-4"> - Decrease of Days </button>
+                        <br />
+                        <button onClick={this.handleCarRent} className="btn btn-outline-primary align-self-end"> Rent Car </button>
 
+                        <Modal show={this.state.showPurchasedCard}>
+                            <Modal.Header>
+                                <h4>Rent Confirmed</h4>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <h6>Car Name: {this.state.name}</h6>
+                                <h6>Car Type: {this.state.type}</h6>
+                                <h6>Rented for: {this.state.noOfDays} Days</h6>
+                                <h6>Total price of rent: {this.state.calculatedPrice} Rs</h6>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <button onClick={this.handleCarRent} className="btn btn-outline-primary"> Close </button>
+                            </Modal.Footer>
+                        </Modal>
                     </div>
                 </div>
             </div>

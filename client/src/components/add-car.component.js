@@ -38,7 +38,6 @@ export default class AddCar extends Component {
 
   render() {
     const carTypes = ['SUV', 'Sedan', 'Hatchback'];
-    console.log(this.state);
     return (
       <div>
         <h3>Add new Car</h3>
