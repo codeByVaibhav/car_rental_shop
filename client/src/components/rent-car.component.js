@@ -85,11 +85,11 @@ export default class RentCar extends Component {
                     <div className="card card-body" style={{ "width": "26rem" }}>
                         <h5 className="card-title">Car Name: {this.state.name} </h5>
                         <h5 className="card-title">Car Type: {this.state.type} </h5>
-                        <p className="card-title">Car Pricing: {this.state.desc} </p>
+                        <h6 className="card-title">Car Pricing: {this.state.desc} </h6>
                         <h6>Total Price: {this.state.calculatedPrice} Rs</h6>
                         <h6>Days to Rent: {this.state.noOfDays}</h6>
                         <button onClick={this.handleIncreaseDays} className="btn btn-primary ml-4 mr-4 mt-4 mb-2"> + Increase No of Days </button>
-                        <button onClick={this.handleDecreaseDays} className="btn btn-primary ml-4 mr-4"> - Decrease of Days </button>
+                        <button onClick={this.handleDecreaseDays} className="btn btn-primary ml-4 mr-4"> - Decrease No of Days </button>
                         <br />
                         <button onClick={this.handleCarRent} className="btn btn-outline-primary align-self-end"> Rent Car </button>
 
