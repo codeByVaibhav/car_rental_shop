@@ -82,7 +82,7 @@ export default class RentCar extends Component {
         return (
             <div className="row">
                 <div className="col-6">
-                    <div className="card card-body" style={{ "width": "28rem" }}>
+                    <div className="card card-body" style={{ "width": "26rem" }}>
                         <h5 className="card-title">Name: {this.state.name} </h5>
                         <h5 className="card-title">Type: {this.state.type} </h5>
                         <p className="card-title">Pricing: {this.state.desc} </p>
@@ -107,6 +107,7 @@ export default class RentCar extends Component {
                                 <button onClick={this.handleCarRent} className="btn btn-outline-primary"> Close </button>
                             </Modal.Footer>
                         </Modal>
+
                     </div>
                 </div>
             </div>

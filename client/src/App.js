@@ -14,9 +14,13 @@ function App() {
         <Navbar />
         <br />
         <Route path="/" exact component={CarList} />
-        <Route path="/add" component={AddCar} />
+        <div className="center">
+          <Route path="/add" component={AddCar} />
+        </div>
         <Route path="/pricing" component={CarPricing} />
-        <Route path="/rent/:id" component={RentCar} />
+        <div className="center">
+          <Route path="/rent/:id" component={RentCar} />
+        </div>
       </div>
     </Router>
   );

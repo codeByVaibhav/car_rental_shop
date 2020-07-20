@@ -37,7 +37,7 @@ export default class CarList extends Component {
       return <Car car={car} rentCar={this.deleteExercise} key={car._id} />;
     });
     return (
-      <div>
+      <div style={{ "width": "auto" }}>
         <h3>Cars List</h3>
         <table className="table">
           <thead className="thead-light">

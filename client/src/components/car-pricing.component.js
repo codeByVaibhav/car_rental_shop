@@ -9,7 +9,7 @@ import {
 
 const CarPricing = (props) => {
     return (
-        <div>
+        <div style={{ "width": "auto" }}>
             <h3>Fees</h3>
             <table className="table">
                 <thead className="thead-light">

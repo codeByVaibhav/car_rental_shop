@@ -6,11 +6,11 @@
   "scripts": {
     "build": "cd client && npm run build",
     "install-client": "cd client && npm install",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node server.js",
     "client": "cd client && npm start",
-    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon server.js\" \"npm run client\""
+    "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon server.js\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kumar Vaibahv",
   "license": "ISC",
