@@ -37,7 +37,7 @@ export default class CarList extends Component {
     const cars_list = this.state.cars.map(car => {
       return <Car car={car} rentCar={this.deleteExercise} key={car._id} />;
     });
-    return cars_list[0] ? (
+    return cars_list.length > 0 ? (
       <div style={{ "width": "auto" }}>
         <h3>Cars List</h3>
         <table className="table">
