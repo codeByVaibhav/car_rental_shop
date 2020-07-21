@@ -82,16 +82,27 @@ export default class RentCar extends Component {
         return (
             <div className="row">
                 <div className="col-6">
-                    <div className="card card-body" style={{ "width": "26rem" }}>
-                        <h5 className="card-title">Car Name: {this.state.name} </h5>
-                        <h5 className="card-title">Car Type: {this.state.type} </h5>
-                        <h6 className="card-title">Car Pricing: {this.state.desc} </h6>
-                        <h6>Total Price: {this.state.calculatedPrice} Rs</h6>
-                        <h6>Days to Rent: {this.state.noOfDays}</h6>
-                        <button onClick={this.handleIncreaseDays} className="btn btn-primary ml-4 mr-4 mt-4 mb-2"> + Increase No of Days </button>
-                        <button onClick={this.handleDecreaseDays} className="btn btn-primary ml-4 mr-4"> - Decrease No of Days </button>
-                        <br />
-                        <button onClick={this.handleCarRent} className="btn btn-outline-primary align-self-end"> Rent Car </button>
+                    <div className="card text-center" style={{ "width": "26rem" }}>
+                        <h3 className="card-header" >{this.state.name}</h3>
+
+                        <div className="card-body" style={{ "width": "26rem" }}>
+
+                            <h6 className="card-subtitle mb-2 text-muted">Type: {this.state.type}</h6>
+                            <h6 className="card-title mb-0">Pricing:</h6>
+                            <p className="card-text">{this.state.desc}</p>
+
+                            <hr class="solid mt-0"></hr>
+                            <h6>Total Price: {this.state.calculatedPrice} Rs</h6>
+                            <h6>Days to Rent: {this.state.noOfDays}</h6>
+                            <hr class="solid mb-0"></hr>
+
+                            <button onClick={this.handleIncreaseDays} className="btn btn-primary ml-4 mr-4 mt-4 mb-2"> + Increase No of Days </button>
+                            <button onClick={this.handleDecreaseDays} className="btn btn-primary ml-4 mr-4"> - Decrease No of Days </button>
+                        </div>
+
+                        <div className="card-footer text-muted">
+                            <button onClick={this.handleCarRent} className="btn btn-outline-primary float-right"> Rent Car </button>
+                        </div>
 
                         <Modal show={this.state.showPurchasedCard}>
                             <Modal.Header>

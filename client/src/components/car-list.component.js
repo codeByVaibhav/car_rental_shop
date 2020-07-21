@@ -10,7 +10,8 @@ const Car = props => {
       <td>{props.car.type}</td>
       <td>{props.car.rented ? "Yes" : "No"}</td>
       <td>
-        {props.car.rented ? "NA"
+        {props.car.rented ?
+          <button type="button" className="btn btn-dark" to={"/rent/" + props.car._id} disabled>Rent</button>
           :
           <Link type="button" className="btn btn-dark" to={"/rent/" + props.car._id}>Rent</Link>}
       </td>

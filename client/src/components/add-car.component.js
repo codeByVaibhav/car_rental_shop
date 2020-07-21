@@ -41,55 +41,60 @@ export default class AddCar extends Component {
     return (
       <div className="row">
         <div className="col-6" >
-          <div className="card card-body" style={{ "width": "26rem" }}>
-            <h3>Add new Car</h3>
-            <form onSubmit={this.onSubmit}>
-              <div className="form-group">
-                <label> <h6>Car Type:</h6> </label>
-                <select ref="userInput"
-                  required
-                  className="form-control"
-                  value={this.state.type}
-                  onChange={this.onChangeType}>
-                  {
-                    carTypes.map((type) => {
-                      return (<option
-                        key={type}
-                        value={type}>{type}
-                      </option>);
-                    })
-                  }
-                </select>
-              </div>
-              <div className="form-group">
-                <label><h6>Car Name:</h6></label>
-                <input type="text"
-                  required
-                  className="form-control"
-                  value={this.state.name}
-                  onChange={this.onChangeName}
-                  placeholder="Car name"
-                />
-              </div>
+          <div className="card" style={{ "width": "26rem" }}>
+            <h3 className="card-header">Add Car</h3>
 
-              <div className="form-group">
-                <label>
-                  <h6>Rented:
+            <div className="card-body" style={{ "width": "26rem" }}>
+
+              <form onSubmit={this.onSubmit}>
+                <div className="form-group">
+                  <label> <h6 className="mb-0">Car Type:</h6> </label>
+                  <select ref="userInput"
+                    required
+                    className="form-control"
+                    value={this.state.type}
+                    onChange={this.onChangeType}>
+                    {
+                      carTypes.map((type) => {
+                        return (<option
+                          key={type}
+                          value={type}>{type}
+                        </option>);
+                      })
+                    }
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label><h6 className="mb-0">Car Name:</h6></label>
+                  <input type="text"
+                    required
+                    className="form-control"
+                    value={this.state.name}
+                    onChange={this.onChangeName}
+                    placeholder="Car name"
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label>
+                    <h6 className="ml-1 mt-1 mb-0">Rented:
                   <input
-                      className="ml-1"
-                      type="checkbox"
-                      value="Rented"
-                      checked={this.state.rented}
-                      onChange={this.toggleCheckboxChange}
-                    />
-                  </h6>
-                </label>
-              </div>
+                        className="ml-1"
+                        type="checkbox"
+                        value="Rented"
+                        checked={this.state.rented}
+                        onChange={this.toggleCheckboxChange}
+                      />
+                    </h6>
+                  </label>
+                </div>
 
-              <div className="form-group">
-                <input type="submit" value="Add Car" className="btn btn-primary" />
-              </div>
-            </form>
+                <div className="form-group">
+                  <input type="submit" value="Add Car" className="btn btn-primary float-right" />
+                </div>
+
+              </form>
+            </div>
           </div>
         </div>
       </div>
